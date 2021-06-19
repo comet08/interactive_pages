@@ -1,0 +1,19 @@
+{
+  "name": "wave",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run start",
+    "build": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.2.2"
+  },
+  "homepage" : "https://comet08.github.io/wave"
+}
