@@ -8,24 +8,42 @@ export class List{
     constructor(x, y, totalBox, size, radius){
         this.totalBox = totalBox;
         this.boxes = [];
+
+        this.fixedS = size;
         this.size = size;
+
         this.x = x;
         this.y = y;
         this.radius = radius;
+        this.rotate = 0;
 
         this.init();
     }
 
-    init(){
+    init(){ 
         for(let i = 0 ; i < this.totalBox; i++){
             const box = new Box(this.size);
+            
             this.boxes[i] = box;
+           
         }
     }
 
-    animate(ctx){
+
+
+    animate(ctx, moveX){ 
+        ctx.save();
         const angle = Math.PI*2/this.totalBox;
+        
         ctx.translate(this.x, this.y);
+
+        this.rotate += moveX * 0.08;
+
+        ctx.rotate(this.rotate);
+
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = "rgba(200,200,100,0.5)";
+        
         for(let i = 0; i < this.totalBox; i++){
             ctx.save();
           
@@ -34,7 +52,7 @@ export class List{
             ctx.translate(x, y);
             ctx.fillStyle = colors[i];
     
-            const rotate = ((360 / this.totalBox)*i + 45)*Math.PI / 180;
+            const rotate = ((360 / this.totalBox)*i + 100)*Math.PI / 180;
             
             ctx.rotate(rotate);
             ctx.beginPath();
@@ -44,6 +62,6 @@ export class List{
             ctx.restore();
         }
         
-
+        ctx.restore();
     }
 }
