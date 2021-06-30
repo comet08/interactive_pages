@@ -11,5 +11,11 @@
 - 마우스로 드래그하면 회전하는 도형을 만듭니다.
 - https://comet08.github.io/interactive_pages/rotate_polygon
 
+3. butterfly
+- wave를 응용하여 표현한 형태입니다
+- https://comet08.github.io/interactive_pages/butterfly/
+
+4. 
+
 
 유튜브 강의를 참고해서 만들었습니다.
